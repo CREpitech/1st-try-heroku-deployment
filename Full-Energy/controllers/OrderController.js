@@ -31,7 +31,7 @@ module.exports.create_order = async (req, res) =>{
     const cartInfo = await Cart.find({_id : cartId}).then(cart => cart[0]).catch(e=>console.log(e))
     const items = cartInfo.items;
     const total = cartInfo.subtotal;
-    const card = req.body.card_type
+    const card = req.body.card_type;
     const paymentMethod = req.body.payment_method;
     if(!userAddr2){
         const userUpdate = await User.findByIdAndUpdate({_id: userId},{phone: userPhone, address_1: userAddr1})
