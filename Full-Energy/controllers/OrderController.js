@@ -39,7 +39,7 @@ module.exports.create_order = async (req, res) =>{
         const userUpdate = await User.findByIdAndUpdate({_id: userId},{phone: userPhone, address_1: userAddr1, address_2:userAddr2})
    
     }else{
-        res.status(404).json({message:"Must provide a valid address for the product to be sent"})
+        res.status(404).json({message:"Must provide a valid address product to be sent"})
     }
     const confirmationOfUserUpdate= await User.findById({_id:userId});
     const order = new Order({
