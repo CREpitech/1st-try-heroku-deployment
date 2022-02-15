@@ -25,7 +25,7 @@ module.exports.get_order = async (req,res) =>
 module.exports.create_order = async (req, res) =>{
     const userId = req.body.user_id;
     const userAddr1 = req.body.address_1;
-    const userAddr2 = req.body.address_2;
+    const userAddr2 = req.body.address_2
     const userPhone = req.body.phone;
     const cartId = req.body.cart_id;
     const cartInfo = await Cart.find({_id : cartId}).then(cart => cart[0]).catch(e=>console.log(e))
