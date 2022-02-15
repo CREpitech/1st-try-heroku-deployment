@@ -36,7 +36,7 @@ app.use('/api',billsRoutes);
     });
 } */
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 5000;
 const dbURI = config.get('dbURI');
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => app.listen(port, () => console.log(`${port}`)))
